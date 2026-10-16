@@ -72,6 +72,16 @@ export default function TrainingPage() {
     return "tag tag-sim";
   }
 
+  function howToFor(kind: string): string {
+    if (kind === "CHUG")
+      return "Drink the set amount from a can or bottle as quickly as is comfortable, then rest. Same drink, same container each time.";
+    if (kind === "GUT")
+      return "Train your stomach to settle after fizz. Drink, breathe slowly, then release a small burp while walking. Stay upright.";
+    if (kind === "SIM")
+      return "Links a drink with a lap, like race day. Drink from the can or bottle, pause briefly to settle, then run the lap.";
+    return "Jog slowly and walk whenever needed. You should be able to talk in full sentences throughout.";
+  }
+
   return (
     <div>
       <div className="old-box">
@@ -124,13 +134,11 @@ export default function TrainingPage() {
               ~{s.minutes} mins. Goal: {t(s.goal)}
             </small>
           </p>
-          {s.howTo && (
-            <p>
-              <small>
-                <b>How to do it:</b> {t(s.howTo)}
-              </small>
-            </p>
-          )}
+          <p>
+            <small>
+              <b>How to do it:</b> {t(s.howTo ?? howToFor(s.kind))}
+            </small>
+          </p>
           <ol>
             {s.steps.map((step) => (
               <li key={step}>{t(step)}</li>

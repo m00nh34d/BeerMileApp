@@ -6,7 +6,7 @@ export default function Home() {
       <span className="burst">4 drinks + 4 laps</span>
       <h1>Beer Mile Training</h1>
       <div className="speech" style={{ textAlign: "left" }}>
-        Complete the questionnaire to get your personal 12-week training plan.
+        A personal 12-week training plan to get you round a beer mile. Four drinks, four laps. Whether it is your first go or you have done it before, answer a few questions and you will get a plan that fits where you are starting from.
       </div>
       <p style={{ marginTop: "24px" }}>
         <Link href="/quiz" className="old-btn">

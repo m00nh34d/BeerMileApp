@@ -31,9 +31,9 @@ export interface PersonalisedPlan {
 }
 
 const WATER =
-  "Default: cold water or fizzy drink without alcohol. Time every chug with your phone. Same cup, same pour, every time.";
+  "Default: fizzy drink straight from the can or bottle. Time every chug with your phone. Same drink, same container, every time. Cups hide the hard part — cans and bottles do not.";
 const BEER_NOTE =
-  "Max 1 session with alcohol per week, only where you are of legal drinking age. Otherwise use a non-alcoholic drink. Eat 2–3 hrs before, sip water between reps, stop if you feel unwell.";
+  "Max 1 session with alcohol per week, only where you are of legal drinking age. Otherwise use a non-alcoholic beer or fizzy drink in a can. Eat 2–3 hrs before, sip water between reps, stop if you feel unwell.";
 const GUT_NOTE =
   "Gut-first rule: no sprinting on a full fizzy stomach. Walk 20 steps + 3 nose-breaths after every chug.";
 
@@ -147,9 +147,9 @@ const starterWeeks: PlanWeek[] = [
       {
         name: "Chug + Lap Lite × 2",
         kind: "SIM",
-        minutes: 30,
-        beer: false,
-        goal: "2 × (12oz water + 400m jog)",
+        minutes: 20,
+        beer: true,
+        goal: "2 × (12oz from can + 400m jog)",
         howTo: "A simulation (SIM) session links a drink with a lap, like race day. Drink, pause to settle, then jog one lap slowly.",
         steps: [WATER, "Chug 12oz → 3 breaths → jog 400m chatty pace → walk 3 min.", "Repeat once. Total 2 combos.", "Transitions under 30 secs is a win this week."],
       },
@@ -194,9 +194,9 @@ const starterWeeks: PlanWeek[] = [
       {
         name: "★ Beer Sim #1 ★",
         kind: "SIM",
-        minutes: 25,
+        minutes: 15,
         beer: true,
-        goal: "1 × (beer/NA + 1 easy lap)",
+        goal: "1 × (beer/NA from can + 1 easy lap)",
         steps: [BEER_NOTE, "Chill can, pour with foam, wait 3 secs, chug.", "3 breaths, jog 400m easy. Walk after. Done = legend.", "Log chug time + how gut felt 1–10."],
       },
       {
@@ -215,10 +215,10 @@ const starterWeeks: PlanWeek[] = [
     pep: "Deload-ish. Technique polish. Your gut sends thank-you notes.",
     sessions: [
       {
-        name: "Chug-Jog × 2 (water)",
+        name: "Chug-Jog × 2",
         kind: "SIM",
-        minutes: 30,
-        beer: false,
+        minutes: 20,
+        beer: true,
         goal: "Smooth combos, no drama",
         steps: [WATER, "2 × (12oz + 800m jog-walk).", "Focus: breathing in first 100m after chug — nose only."],
       },
@@ -240,9 +240,9 @@ const starterWeeks: PlanWeek[] = [
       {
         name: "Back-to-Back Combos",
         kind: "SIM",
-        minutes: 35,
-        beer: false,
-        goal: "2 × (12oz + 400m) with 5 min rest",
+        minutes: 20,
+        beer: true,
+        goal: "2 × (12oz from can + 400m) with short rest",
         steps: [WATER, "Combo 1, walk 5 min, combo 2.", "If gut sloshes: walk longer. Finishing > speed.", GUT_NOTE],
       },
       {
@@ -263,9 +263,9 @@ const starterWeeks: PlanWeek[] = [
       {
         name: "★ Beer Sim #2 ★",
         kind: "SIM",
-        minutes: 35,
+        minutes: 20,
         beer: true,
-        goal: "2 × (beer/NA + lap), 10 min apart",
+        goal: "2 × (beer/NA from can + lap), short rest",
         steps: [BEER_NOTE, "Same race-day setup: shoes, can, chug spot.", "Transitions: can down → 3 breaths → jog. Target <20 secs.", "Walk 10 min between reps. Log everything!"],
       },
       {
@@ -294,9 +294,9 @@ const starterWeeks: PlanWeek[] = [
       {
         name: "★ Beer Sim #3 (single) ★",
         kind: "SIM",
-        minutes: 25,
+        minutes: 15,
         beer: true,
-        goal: "1 × beer/NA + 1 lap, sharp transitions",
+        goal: "1 × beer/NA from can + 1 lap, sharp transitions",
         steps: [BEER_NOTE, "Practice the first 60 seconds of race day only.", "Can down → 3 breaths → jog. Target transition <15 secs."],
       },
     ],
@@ -317,7 +317,7 @@ const starterWeeks: PlanWeek[] = [
       {
         name: "★ RACE DAY ★ 4 × (beer + lap)",
         kind: "SIM",
-        minutes: 40,
+        minutes: 15,
         beer: true,
         goal: "Finish with a smile (and nothing else coming up)",
         steps: [BEER_NOTE, "Lap 1: EASY. Do not sprint. Calm chug wins.", "Laps 2–3: steady. Burp-walk first 20 steps of each lap.", "Lap 4: empty the tank (and the can). High-five the line!"],
@@ -441,7 +441,7 @@ const steadyWeeks: PlanWeek[] = [
     sessions: [
       { name: "Shakeout (2 days out)", kind: "JOG", minutes: 20, beer: false, goal: "Loose + smiling", steps: ["10-min jog + 1 × 6oz water chug.", "Prep kit. Chill cans. Sleep 8 hrs."] },
       { name: "Burp Walk (day before)", kind: "GUT", minutes: 15, beer: false, goal: "Calm nerves", steps: ["15-min walk + breathing. Visualise 4 calm chugs.", "No new foods. Boring dinner = fast race."] },
-      { name: "★ RACE DAY ★", kind: "SIM", minutes: 40, beer: true, goal: "4 × beer + 4 laps. Glory.", steps: [BEER_NOTE, "Lap 1 EASY — bank calm, not time.", "Laps 2–3 steady with burp-walk starts.", "Lap 4: everything you have. Finish with empty held high!"] },
+      { name: "★ RACE DAY ★", kind: "SIM", minutes: 15, beer: true, goal: "4 × beer + 4 laps. Glory.", steps: [BEER_NOTE, "Lap 1 EASY — bank calm, not time.", "Laps 2–3 steady with burp-walk starts.", "Lap 4: everything you have. Finish with empty held high!"] },
     ],
   },
 ];
