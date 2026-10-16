@@ -1,16 +1,15 @@
 # BeerMileApp — Copilot Instructions
 
-Web App for Beer Mile training with custom user training profiles. Next.js 15 + TypeScript + Tailwind CSS (App Router, `src/` dir).
+Beer Mile training: quiz → personalised 12-week plan. Next.js 15 + TypeScript + Tailwind CSS (App Router, `src/` dir). Simple dark old-school theme.
 
 ## Project Structure
-- `src/app/page.tsx` — Home, hero + rules summary
-- `src/app/layout.tsx` — Header nav (Home/Profile/Training/Log), footer
-- `src/app/profile/page.tsx` — Custom Training Profile form, localStorage, Beer Mile estimate
-- `src/app/training/page.tsx` — Adaptive plan by experience (beginner/intermediate/advanced)
-- `src/app/log/page.tsx` — Beer Mile lap logger (4x run+chug) + training runs, history
-- `src/lib/types.ts` — TrainingProfile, WorkoutLog, LapEntry, time helpers
-- `src/lib/storage.ts` — localStorage load/save, keys `beermile.profile`, `beermile.logs`
-- `src/app/globals.css` — Tailwind + theme
+- `src/app/page.tsx` — Home, quiz prompt only
+- `src/app/layout.tsx` — Simple centered nav (home/quiz/my plan), footer
+- `src/app/quiz/page.tsx` — 7-question quiz, one per page, localStorage `beermile.quiz`
+- `src/app/training/page.tsx` — Personalised 12-week plan from quiz, one week at a time (internal starter/steady/iron bases, never labeled to users)
+- `src/lib/quiz.ts` — QUIZ (7 Qs), scoring, result
+- `src/lib/plans.ts` — 12-week starter/steady/iron plans (CHUG/GUT/JOG/SIM sessions)
+- `src/app/globals.css` — Plain dark theme (old-box, old-btn, old-link, quiz-opt)
 
 ## Build & Run
 - Use `.` as working directory.
@@ -22,12 +21,15 @@ Web App for Beer Mile training with custom user training profiles. Next.js 15 + 
 - Static hosting: `output: "export"` + `trailingSlash` + `images.unoptimized`; deploy `out/` via `.github/workflows/deploy-pages.yml` (`NEXT_BASE_PATH=/BeerMileApp` for project sites)
 
 ## Conventions
-- Client components (`"use client"`) for profile/training/log pages (localStorage).
+- Client components (`"use client"`) for quiz/training pages (localStorage quiz result).
 - Keep communication concise, no verbose output dumps.
 - No extra folders beyond project root except `.vscode/` for tasks.
 - No external media/links unless requested. Placeholders must be labeled.
-- Data stays in browser localStorage — no backend/auth yet.
-- 21+ only content. Drink responsibly messaging in UI.
+- Quiz result stays in browser localStorage (`beermile.quiz`) — no backend/auth.
+- Chug-first: plans prioritize sculling + keep-it-down over running capacity.
+- Max 1 beer/NA sim per week, 21+ only, water always works. Drink responsibly messaging in UI.
+- Never show beginner/intermediate/advanced labels to users — personalised titles only.
+- Simple dark old-school theme. No modern AI styles, no gradients/shadows, no blink/marquee.
 - Package name is `beermileapp` (lowercase, npm restriction — folder is BeerMileApp).
 
 ## Status

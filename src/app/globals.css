@@ -2,12 +2,213 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #faf7f0;
-  --foreground: #1a1a1a;
+html {
+  background-color: #14141b;
+  background-image: radial-gradient(#2a2a35 1.4px, transparent 1.4px);
+  background-size: 18px 18px;
+  background-attachment: fixed;
+  min-height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: #14141b;
+  background-image: radial-gradient(#2a2a35 1.4px, transparent 1.4px);
+  background-size: 18px 18px;
+  background-attachment: fixed;
+  color: #f5f1e6;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.55;
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: Impact, "Arial Black", "Franklin Gothic Heavy", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffcc00;
+  text-shadow: 2px 2px 0 #000;
+  margin: 0.4em 0;
+}
+
+.wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.site-header {
+  border-bottom: 3px solid #000;
+  background: #1e1e28;
+}
+
+.site-nav {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.site-logo {
+  font-family: Impact, "Arial Black", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffcc00;
+  text-shadow: 2px 2px 0 #000;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.site-links {
+  display: flex;
+  gap: 8px;
+}
+
+.site-footer {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 16px;
+  text-align: center;
+  color: #bdbdbd;
+  font-size: 0.8rem;
+}
+
+/* comic panels: flat, thick black border, hard offset shadow */
+.old-box {
+  background: #22222e;
+  border: 3px solid #000;
+  outline: 2px solid #ffcc00;
+  padding: 14px;
+}
+
+.old-btn {
+  display: inline-block;
+  background: #ffcc00;
+  color: #111;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  padding: 8px 20px;
+  font-family: Impact, "Arial Black", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.old-btn:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #000;
+}
+
+.old-btn:active:not(:disabled) {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #000;
+}
+
+.old-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.old-link {
+  color: #6ee7ff;
+}
+
+.quiz-opt {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #fffdf3;
+  color: #14141b;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  padding: 10px 12px;
+  font-family: Verdana, Geneva, sans-serif;
+  cursor: pointer;
+}
+
+.quiz-opt:hover {
+  transform: translate(-1px, -1px);
+}
+
+.quiz-opt-picked {
+  background: #ffcc00;
+}
+
+.speech {
+  background: #fffdf3;
+  color: #14141b;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  padding: 12px 14px;
+  position: relative;
+}
+
+.speech::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  bottom: -12px;
+  width: 16px;
+  height: 16px;
+  background: #fffdf3;
+  border-right: 3px solid #000;
+  border-bottom: 3px solid #000;
+  transform: rotate(45deg);
+}
+
+.tag {
+  display: inline-block;
+  border: 2px solid #000;
+  padding: 1px 8px;
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #111;
+}
+
+.tag-chug { background: #ff5252; color: #fff; }
+.tag-gut { background: #69f06e; }
+.tag-jog { background: #40c4ff; }
+.tag-sim { background: #ffcc00; }
+
+.burst {
+  display: inline-block;
+  background: #ff5252;
+  color: #fff;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  padding: 4px 12px;
+  font-family: Impact, "Arial Black", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transform: rotate(-2deg);
+}
+
+.unit-toggle {
+  display: inline-flex;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.unit-toggle button {
+  background: #fffdf3;
+  color: #111;
+  border: 0;
+  padding: 4px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.unit-toggle button.active {
+  background: #ffcc00;
+}
+
+.session + .session {
+  margin-top: 12px;
 }

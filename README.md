@@ -1,15 +1,14 @@
-# BeerMileApp 🍺🏃
+# Beer Mile Training
 
-Train for the Beer Mile with a custom training profile, adaptive plans, and lap tracking.
+Quiz → personalised 12-week Beer Mile plan. Simple dark old-school site, static, no backend.
 
 **Stack:** Next.js 15 + TypeScript + Tailwind CSS (App Router, `src/` dir)
 
 ## Features
 
-- **Custom Training Profile** (`/profile`) — name, age, experience, mile time, chug speed, beer preference, weekly volume, goal time. Saved to localStorage. Includes Beer Mile estimate.
-- **Adaptive Training Plan** (`/training`) — beginner / intermediate / advanced weekly schedule with runs, intervals, chug practice, and race simulations.
-- **Run Logger** (`/log`) — log Beer Miles lap-by-lap (4× run + chug) with auto total, plus training runs, chug practice, intervals. History with delete, stored locally.
-- **Home** (`/`) — overview + official rules summary.
+- **Home** (`/`) — complete the quiz to get your training plan
+- **Quiz** (`/quiz`) — 7 questions, one per page, saved to localStorage (`beermile.quiz`)
+- **My Plan** (`/training`) — personalised 12-week plan from quiz, one week shown at a time (internal starter/steady/iron bases, never labeled to users)
 
 ## Getting Started
 
@@ -35,5 +34,5 @@ Open http://localhost:3000
 
 ## Notes
 
-- Data is stored in browser localStorage (`beermile.profile`, `beermile.logs`) — no backend.
-- 21+ only. Drink responsibly. For beer workouts, substitute water/NA if underage or preferring non-alcoholic training.
+- Quiz result stored in browser localStorage (`beermile.quiz`) — no backend.
+- 21+ only for alcohol. Max 1 beer session/week in plans; water/NA trains same skills. Drink responsibly, stop if sick, never drive after drinking.

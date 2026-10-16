@@ -3,8 +3,8 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "BeerMileApp — Beer Mile Training",
-  description: "Train for the Beer Mile with custom profiles, lap tracking, and training plans.",
+  title: "Beer Mile Training",
+  description: "Complete the questionnaire to get your 12-week Beer Mile training plan.",
 };
 
 export default function RootLayout({
@@ -14,24 +14,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen antialiased">
-        <header className="border-b bg-white/80 backdrop-blur sticky top-0 z-10">
-          <nav className="mx-auto max-w-5xl px-4 py-3 flex items-center justify-between">
-            <Link href="/" className="font-black text-xl tracking-tight">
-              🍺🏃 BeerMileApp
+      <body>
+        <header className="site-header">
+          <nav className="site-nav">
+            <Link href="/" className="site-logo">
+              Beer Mile Training
             </Link>
-            <div className="flex gap-4 text-sm font-medium">
-              <Link href="/" className="hover:underline">Home</Link>
-              <Link href="/profile" className="hover:underline">Profile</Link>
-              <Link href="/training" className="hover:underline">Training</Link>
-              <Link href="/log" className="hover:underline">Log Run</Link>
+            <div className="site-links">
+              <Link href="/" className="old-link">
+                home
+              </Link>
+              <Link href="/quiz" className="old-link">
+                questionnaire
+              </Link>
+              <Link href="/training" className="old-link">
+                my plan
+              </Link>
             </div>
           </nav>
         </header>
-        <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
-        <footer className="mx-auto max-w-5xl px-4 py-8 text-center text-xs text-neutral-500">
-          Drink responsibly. 21+ only. Train safe.
-        </footer>
+        <main className="wrap">{children}</main>
+        <footer className="site-footer" />
       </body>
     </html>
   );
